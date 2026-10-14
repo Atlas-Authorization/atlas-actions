@@ -51,6 +51,12 @@ export interface ActionUser {
 export interface ActionConnection {
   /** e.g. `password`, `oauth_google`, `passkey`, `sso_<id>`, `lti`. */
   strategy: string | null;
+  /**
+   * Registration triggers only — the sign-up method family: `password`,
+   * `email_code`, `email_link`, `phone_code`, `social`, `enterprise_sso`,
+   * `web3_wallet` or `lti`. Absent on post_login.
+   */
+  method?: string | null;
 }
 
 /** The inbound request the auth transaction arrived on. */
